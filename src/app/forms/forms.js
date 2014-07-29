@@ -12,9 +12,13 @@
  * The dependencies block here is also where component dependencies should be
  * specified, as shown below.
  */
-angular.module( 'seqant.home', [
-  'ui.router',
-  'seqant.home.controllers'
+angular.module( 'seqant.forms', [
+	'seqant.services',
+
+	/*third party dependencies*/
+	'ui.router',
+	'localytics.directives',
+	'angularFileUpload'
 ])
 
 /**
@@ -24,19 +28,38 @@ angular.module( 'seqant.home', [
  */
 .config(['$stateProvider',function config( $stateProvider ) 
 {
-  $stateProvider.state( 'home', {
-    url: '/home',
+  $stateProvider.state( 'sequenceFile', {
+    url: '/sequenceFile',
     views: {
       "main": {
-        controller: 'HomeCtrl',
-        templateUrl: 'home/home.tpl.html'
+        controller: 'SequenceFileFormCtrl',
+        templateUrl: 'forms/sequenceFile/sequenceFileForm.tpl.html'
       }
     },
-    data:{ pageTitle: 'Home' }
+    data:{ pageTitle: 'Sequence File', formType : $stateProvider.state }
   });
-}]);
+}])
+
+.config(['$httpProvider', function($httpProvider) 
+{
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}])
 
 /**
- * Controllers are in a separate file in the same folder as the module
+ * And of course we define a controller for our routes in separate files
  */
 
+.directive('validFile', function () {
+  return {
+    restrict: 'A',
+    require: 'ngModel',
+    link: function (scope, el, attrs, ngModel) {
+      el.bind('change', function () {
+        scope.$apply(function () {
+          ngModel.$setViewValue(el.val());
+        });
+      });
+    }
+  };
+});

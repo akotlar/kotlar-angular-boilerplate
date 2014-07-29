@@ -1,0 +1,239 @@
+ /**
+ * This is the main sequencing form stylesheet. It should include or import all
+ * stylesheets used throughout the application relating to sequencing forms
+ */
+
+@import '../../vendor/bootstrap/less/forms.less';
+@import '../../vendor/chosen/chosen.min.css';
+
+
+.select2-container {
+  width: 100px;
+}
+
+.email-choice .error {
+  margin-bottom: -25px;
+  margin-top: 5px;
+  font-family: Helvetica neue;
+  color: #c3c3c3;
+}
+
+input[type="submit"] {
+  margin-top: 25px;
+}
+
+embed {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.loading {
+  display: block;
+  position: absolute;
+}
+
+  .loading img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .loading-text {
+    margin-top: 10px;
+  }
+.btn.fa {
+  font-size: 20px;
+}
+.chosen-container-single .chosen-single {
+  background: #FFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555555;
+  display: block;
+  height: 23px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+line-height: 1.42857;
+padding: 6px 12px;
+transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+width: 100%;
+}
+
+.chosen-container-single .chosen-single div {
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 18px;
+}
+
+.chosen-container-single .chosen-single abbr {
+  background: url("chosen-sprite.png") no-repeat scroll -42px 1px rgba(0, 0, 0, 0);
+  display: block;
+  font-size: 1px;
+  height: 12px;
+  position: absolute;
+  right: 26px;
+  top: 11px;
+  width: 12px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+  padding-left: 0;
+}
+
+.chosen-container {
+  min-width:176px;
+}
+
+.form-group.col-xs-8 .chosen-container {
+  max-width: 188px;
+}
+
+.file-upload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px 10px 0px 0;
+}
+.file-upload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+
+input[multiple] {
+  width: 6.2em;
+}
+
+.sel-file {
+  padding: 1px 5px;
+  font-size: smaller;
+  color: grey;
+}
+
+.response {
+  padding-top: 30px;
+}
+
+.response>ul {
+  list-style-type: decimal;
+}
+
+.response li, .response .reqh {
+  color: blue;
+  font-size: smaller;
+  padding-bottom: 5px; 
+}
+
+.progress {
+  border: 1px none;
+  box-shadow: none !important;
+  display: inline-block;
+  height: auto;
+  margin-bottom: -7px;
+  padding: 0;
+  width: 100px;
+}
+
+.progress div {
+  background: none repeat scroll 0 0 #428BCA;
+  color: #FFFFFF;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  width: 0;
+}
+
+.drop-box {
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  width: 200px;
+  height: 65px; 
+  text-align: center;
+  padding-top: 35px; 
+}
+
+.upload-info {
+  margin-top: 10px;
+}
+
+
+.file-info.ng-binding {
+  position: absolute;
+  top: -7px;
+  left: 0px;
+  font-size: 11px;
+}
+.form-inline {
+  position: relative;
+}
+.drop-box.dragover {
+  border: 5px dashed blue;
+}
+
+/* for IE*/
+.js-fileapi-wrapper {
+  display: inline-block;
+  vertical-align: middle; 
+}
+
+button {
+  padding: 1px 5px;
+  font-size: smaller;
+  margin: 0 3px; 
+}
+
+.ng-v {
+  float: right;
+}
+
+.sel-file img {
+  float: left;
+  width: 18px;
+  height: 18px;
+  padding-right: 10px;
+}
+
+.sub {
+  font-size: smaller;
+  color: #777;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.err {
+  font-size: 12px;
+  color: #C53F00;
+  margin: 15px;
+  padding: 15px;
+  background-color: #F0F0F0;
+  border: 1px solid black;
+}
+
+.queue-progress button:first-of-type {
+  margin-left: 0;
+}
+
+.upload-file-name {
+  display: block;
+  max-width: 192px;
+  overflow: hidden;
+  word-wrap: break-word;
+}

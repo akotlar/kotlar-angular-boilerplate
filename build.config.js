@@ -6,9 +6,12 @@ module.exports = {
    * The `build_dir` folder is where our projects are compiled during
    * development and the `compile_dir` folder is where our app resides once it's
    * completely built.
+   * Kotlar: the 'app_dir' is the path from the .htaccess bearing public folder 
+   * to the parent of the build_dir and compile_dir
    */
   build_dir: 'build',
   compile_dir: 'bin',
+  app_dir: 'seqant',
 
   /**
    * This is a collection of file patterns that refer to our app code (the
@@ -62,11 +65,18 @@ module.exports = {
    */
   vendor_files: {
     js: [
+      'vendor/jquery/dist/jquery.min.js',
+      'vendor/chosen/chosen.jquery.min.js',
       'vendor/angular/angular.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
-      'vendor/angular-ui-utils/modules/route/route.js'
+      'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/angular-socket-io/socket.min.js',
+      
+      'vendor/angular-file-upload/angular-file-upload.js',
+      
+      'vendor/angular-chosen-localytics/chosen.js'
     ],
     css: [
     ],

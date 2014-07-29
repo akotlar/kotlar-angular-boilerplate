@@ -11,7 +11,8 @@
  */
 
 @import '../../vendor/bootstrap/less/bootstrap.less';
-
+@import '../../vendor/bootstrap/less/buttons.less';
+@import '../../vendor/bootstrap/less/button-groups.less';
 
 /**
  * This is our main variables file. We must include it last so we can overwrite any variable
@@ -61,7 +62,9 @@ h2 {
   margin: 20px 0;
   color: #666;
 }
-
+/*h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; /*Bitter, sans-serif is a nice font*/
+/*}*/
 
 /**
  * Navigation
@@ -75,6 +78,26 @@ h2 {
   }
 }
 
+.navbar-header > .navbar-brand.active {
+  background-color:#eee;
+}
+
+.navbar .navbar-nav > li > a {
+  color: #333;
+  font-size: 16px;
+  line-height: 30px;
+  padding: 10px 14px;
+}
+
+.navbar.navbar-nav > li > a:hover{
+  background-color:#eee;
+}
+
+.navbar .navbar-brand {
+  color: #a54243;
+  font-size:30px!important;
+  line-height:19px !important;
+}
 
 /**
  * Footer
@@ -120,4 +143,5 @@ h2 {
  */
 
 @import '../app/home/home.less';
+@import '../app/forms/forms.less';
 
