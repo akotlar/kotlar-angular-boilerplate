@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="seqant" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@seqant">
+    <meta name="twitter:title" content="seqant">
+    <meta name="twitter:description" content="Seqant. An Emory Genome Annotation Tool.">
+    <meta name="twitter:creator" content="@seqant">
+    <meta name="twitter:image:src" content="">
+    <meta property="og:title" content="Seqant" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Seqant. An Emory Genome Annotation Tool.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS -->
+    <link rel="stylesheet" type="text/css" href="seqant/build/assets/seqant-0.1.0.css" />
+
+    <script src='http://localhost:8888/socket.io/socket.io.js'></script>
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="seqant/vendor/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="seqant/vendor/chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="seqant/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="seqant/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="seqant/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js"></script>
+    <script type="text/javascript" src="seqant/vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="seqant/vendor/angular-socket-io/socket.min.js"></script>
+    <script type="text/javascript" src="seqant/vendor/angular-file-upload/angular-file-upload.js"></script>
+    <script type="text/javascript" src="seqant/vendor/angular-chosen-localytics/chosen.js"></script>
+    <script type="text/javascript" src="seqant/build/src/app/about/about.js"></script>
+    <script type="text/javascript" src="seqant/build/src/app/app.js"></script>
+    <script type="text/javascript" src="seqant/build/src/app/app.services.js"></script>
+    <script type="text/javascript" src="seqant/build/src/app/forms/forms.js"></script>
+    <script type="text/javascript" src="seqant/build/src/app/forms/sequenceFile/sequenceFileForm.controller.js"></script>
+    <script type="text/javascript" src="seqant/build/src/app/home/home.controller.js"></script>
+    <script type="text/javascript" src="seqant/build/src/app/home/home.js"></script>
+    <script type="text/javascript" src="seqant/build/src/common/plusOne/plusOne.js"></script>
+    <script type="text/javascript" src="seqant/build/templates-common.js"></script>
+    <script type="text/javascript" src="seqant/build/templates-app.js"></script>
+
+    <!-- it's stupid to have to load it here, but this is for the +1 button -->
+    <!--<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      { "parsetags": "explicit" }
+    </script>-->
+  </head>
+  <body>      
+    <div class="navbar navbar-default" role="navigation" > <!--for fixed:  navbar-fixed-top -->
+      <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home navbar-brand" ui-sref-active="active" ui-sref="home"></a>
+          </div>
+          <div  class="collapse navbar-collapse" ng-class="{'in':!navCollapsed}" >
+            <ul class="nav navbar-nav">
+              <li ui-sref-active="active"><a ui-sref="sequenceFile">Sequence File</a></li>
+              <li ui-sref-active="active"><a ui-sref="listVar">List of Variants</a></li>
+              <li nui-sref-active="active"><a ui-sref="singleVar">Single Variant</a></li>
+              <li ui-sref-active="active"><a  ui-sref="previous">Previous Results</a></li>
+              <li ui-sref-active="active" class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                  Learn <b class="caret"></b>
+                </a>
+                <ul class='dropdown-menu'>
+                 <li ui-sref-active="active"> <a ui-sref="help" >Help</a> </li>
+                 <li ui-sref-active="active"> <a ui-sref="tutorial" >Tutorial</a> </li>
+                 <li ui-sref-active="active"> <a ui-sref="sample">Sample Files</a> </li>
+                 <li> <a href="http://genetics.emory.edu/labs/index.php?lab=44" target='_blank'>About Us</a> </li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+    <div class="container" ui-view="main"></div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <ul class="social">
+            <!--<li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="fa fa-google-plus-sign"></i></a></li>-->
+            <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="fa fa-twitter-sign"></i></a></li>
+            <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="fa fa-linkedin-sign"></i></a></li>
+            <li><a target="_blank" href="http://github.com/ngbp/ngbp"><i class="fa fa-github-sign"></i></a></li>
+          </ul>
+          
+
+          <p>
+            (c) 2013 <a href="http://www.joshdavidmiller.com">Emory University Seqant Team</a>. 
+            <a href="http://github.com/ngbp/ngbp/fork_select">Fork this</a>
+            to kickstart your next project.
+            <br />
+            Seqant is based on
+            <a href="http://www.angularjs.org">AngularJS</a>,
+            <a href="http://getbootstrap.com">Bootstrap</a>, 
+            <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
+            <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>,
+            and 
+            <a href="http://github.com/ngbp/ngbp/fork_select">Angular Boilerplate</a>      
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>
